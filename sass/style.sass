@@ -1,0 +1,537 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Philosopher&family=Playfair+Display:wght@500;600&display=swap')
+/* ====== variables ====== */
+$mobile: 567
+$tablet: 768
+$desktop: 992
+$primary-color: #022d74
+$primary-dark: darken($primary-color, 12%)
+$primary-light: lighten($primary-color, 10%)
+
+:root
+  --ff-bold: 'Poppins', sans-serif
+  --ff-main: 'Playfair Display', sans-serif
+  --ff-para: 'Lato', sans-serif
+  --ff-inter: 'Inter', sans-serif
+  --ff-phil: 'Philosopher', sans-serif
+  --ff-play: 'Playfair Display', serif
+  --fw-400: 400
+  --fw-500: 500
+  --fw-600: 600
+  --lh-main: 113.76%
+  --primary-color: #{$primary-color}
+  --primary-dark: #{$primary-dark}
+  --primary-light: #{$primary-light}
+
+/* ====== extends ====== */
+=r-card
+  &__card
+    font-family: var(--ff-inter)
+
+    &--heading
+      text-align: center
+
+      h2
+        font-weight: var(--fw-500)
+        line-height: var(--lh-main)
+        font-size: 28px
+        margin-bottom: 18px
+
+      +min($tablet)
+        text-align: left
+
+    &--para
+
+      p
+        font-weight: var(--fw-400)
+        line-height: calc(var(--lh-main) + 30%)
+        font-size: 20px
+        color: rgba(0, 0, 0, .8)
+
+/* ====== mixins ====== */
+=flex__space
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  text-align: center
+
+=r-flex($j: center, $a: center)
+  display: flex
+  justify-content: $j
+  align-items: $a
+
+=flex__center
+  +flex__space
+  justify-content: center
+
+=u__select
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+=hof
+  &:hover,
+  &:focus
+    @content
+
+=min($point)
+  @media (min-width: #{$point}px)
+    @content
+
+/* ====== resets ====== */
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  text-decoration: none
+  line-height: 1.3
+  color: inherit
+  outline: none
+  transition: .3s ease-in-out
+
+a,
+button
+  cursor: pointer
+  display: inline-block
+
+body
+  font-size: 1rem
+  overflow-x: hidden
+  letter-spacing: .05rem
+  font-family: var(--ff-para)
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  font-family: var(--ff-bold)
+  font-weight: 600
+
+h1
+  font-size: 1.5rem
+  
+  +min($tablet)
+    font-size: 2rem
+  
+  +min($desktop)
+    font-size: 3rem
+
+img
+  max-width: 100%
+  object-fit: cover
+
+ul
+  list-style: none
+
+section
+  padding: 1rem 0
+
+  +min($mobile)
+    padding: 3rem 0
+
+  .section__title
+    position: relative
+    text-align: center
+    text-transform: capitalize
+    +r-flex
+    margin-bottom: 3rem
+    width: 100%
+    z-index: 0
+    color: var(--primary-color)
+
+    &::before
+      position: absolute
+      content: ''
+      top: 50%
+      left: 10%
+      right: 10%
+      height: .1rem
+      transform: translateY(-50%)
+      background: #c7c7c7
+      z-index: -1
+
+    h2
+      padding-inline: 3rem
+      background: #ffffff
+      font-family: var(--ff-play)
+      line-height: var(--lh-main)
+      font-size: 50px
+
+
+  .section__para
+    text-align: center
+    margin: 2rem auto
+    letter-spacing: .05rem
+    width: 100%
+    max-width: 20rem
+
+    p
+      font-size: .8rem
+      opacity: .75
+      line-height: 2
+
+/* ====== globals ====== */
+.container
+  margin: 0 auto
+  width: 100%
+  max-width: 71.25rem
+  padding: 0 1rem
+
+/* ====== button ====== */
+.btns
+  display: flex
+  gap: 2rem
+  padding: 1rem 0
+  font-family: var(--ff-inter)
+
+  .store
+    padding: .5rem 1rem
+    border: .1rem solid var(--primary-light)
+    background: var(--primary-color)
+    color: #fff
+          
+    +hof
+      background: var(--primary-dark)
+
+    &.store__outline
+      background: transparent
+      color: var(--primary-color)
+
+      +hof
+        background: var(--primary-color)
+        color: #fff
+
+    &__btn
+      +flex__space
+      gap: 1rem
+      transform: scale(.9)
+
+    &__icon
+      font-size: 2rem
+
+      .i
+        transition-duration: .1s
+
+    &__content
+      text-align: left
+      transition: none
+
+      h3
+        font-weight: var(--fw-500)
+        transition: none
+
+      p
+        font-weight: var(--fw-400)
+        font-size: .6rem
+        letter-spacing: .1rem
+        transition: none
+
+/* ====== header ====== */
+
+/* ====== navbar ====== */
+.navbar
+  padding: 1rem 0
+
+  +min($mobile)
+    padding: 1rem 0
+
+  .container
+    +flex__center
+    gap: 1rem
+    flex-direction: column
+
+    +min($mobile)
+      +flex__space
+      gap: 0
+      flex-direction: row
+
+  &__logo
+    font-family: var(--ff-bold)
+    font-weight: 700
+    font-size: 1rem
+    color: var(--primary-dark)
+
+    .logo
+
+      +hof
+        color: var(--primary-light)
+
+  &__menu ul,
+  &__links
+    +r-flex
+
+  &__menu ul
+    font-size: 20px
+    font-weight: var(--fw-400)
+    font-family: var(--ff-phil)
+    gap: 1rem
+
+/* ====== banner ====== */
+.banner
+  padding: 1rem
+
+  .container
+    margin-top: -5rem
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+    grid-auto-rows: 1fr
+    padding: 0
+
+    +min($tablet)
+      margin-top: 0
+      padding: 2rem 4rem
+
+  &__content
+    +r-flex($j: center, $a: flex-start)
+    flex-direction: column
+
+  &__heading
+
+    h1
+      margin-bottom: 2rem
+      font-weight: var(--fw-600)
+      font-family: var(--ff-play)
+      color: var(--primary-color)
+      line-height: var(--lh-main)
+      font-size: 30px
+
+      +min($tablet)
+        font-size: 50px
+        margin-bottom: 1rem
+
+  &__para
+
+    p
+      font-weight: var(--fw-400)
+      font-family: var(--ff-inter)
+      color: rgba(0, 0, 0, .7)
+      line-height: var(--lh-main)
+      font-size: 12px
+      margin-bottom: 1rem
+
+      +min($tablet)
+        font-size: 18px
+
+  &__img
+    position: relative
+    align-self: stretch
+    padding: 3rem
+    border-radius: 5px
+    background: transparent
+    overflow: hidden
+
+    +min($tablet)
+      background: rgba(217, 217, 217, .7)
+
+/* ====== guide ====== */
+.partners
+
+  .container
+    text-align: center
+
+  h2
+    font-family: var(--ff-play)
+    font-weight: var(--fw-500)
+    font-size: 40px
+    line-height: var(--lh-main)
+    letter-spacing: 0
+
+  &__container
+    +r-flex
+    padding: 1rem
+    gap: 2rem
+
+/* ====== guide ====== */
+.guide
+  color: #101e41
+
+  &__main,
+  &__content,
+  &__navigation,
+  ul
+    +r-flex($j: space-between)
+
+  &__main
+    margin: 0 auto
+    justify-content: flex-start
+    max-width: #{$tablet}px
+
+  &__navigation
+    display: none
+
+    +min($mobile)
+      position: relative
+      align-self: stretch
+      +r-flex($j: space-between, $a: flex-start)
+      flex-direction: column
+      width: 10rem
+
+    ul
+      position: relative
+      flex-direction: column
+      height: calc(90% - 1rem)
+      z-index: 0
+
+      &::before
+        position: absolute
+        content: ''
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        bottom: 0
+        height: 100%
+        background: #333333
+        width: .1rem
+        z-index: -1
+        border-radius: 1rem
+        
+
+      li
+        width: 3.5rem
+        height: 3.5rem
+        align-self: center
+        background: #fff
+        color: inherit
+        padding: .5rem
+        +r-flex
+        font-weight: 400
+        font-size: 1rem
+        +u__select
+
+        span
+          +r-flex
+          width: 100%
+          height: 100%
+          border-radius: 50%
+          font-family: var(--ff-inter)
+          font-weight: var(--fw-400)
+          font-size: 24px
+          border: .2rem solid var(--primary-light)
+
+  &__content
+    flex-direction: column
+    align-items: flex-start
+    gap: 3rem
+
+  +r-card
+
+/* ====== features ====== */
+.features
+
+  &__content
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+    padding: 1rem
+    gap: 4rem
+    width: 100%
+
+    +min($tablet)
+      padding: 1rem 3rem
+      margin: 0 -1rem
+
+  +r-card
+
+/* ====== footer ====== */
+.footer
+  background: #111c24
+  color: #fff
+  padding: 5rem 0
+
+  .container
+    +r-flex
+    flex-direction: column
+
+  &__logo
+    font-family: var(--ff-phil)
+
+    .logo
+      font-size: 45px
+      text-transform: capitalize
+      vertical-align: middle
+      +r-flex
+      gap: 1rem
+      font-weight: 400
+      letter-spacing: .1rem
+      line-height: 50px
+
+      img
+        width: 45px
+
+      +hof
+        color: var(--primary-color)
+
+  &__content
+    width: min(800px, 100%)
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+
+  &__about,
+  &__contact
+    padding: 3rem 0
+
+    h3
+      font-size: 32px
+      line-height: 36px
+      font-weight: var(--fw-400)
+      font-family: var(--ff-phil)
+      margin-bottom: 1rem
+      
+    a
+      font-size: 22px
+      line-height: 27px
+      font-family: var(--ff-inter)
+      font-weight: var(--fw-400)
+    // justify-self: center
+    // align-self: center
+    // text-align: center
+
+  .social__links
+    padding: 1rem 0
+
+    a
+      border: .2rem solid var(--primary-light)
+      width: 2.5rem
+      +r-flex
+      font-size: 80%
+      display: inline-flex
+      aspect-ratio: 1
+      border-radius: 50%
+      margin-right: 1rem
+
+      +hof
+        background: var(--primary-light)
+
+  &__copy
+    // padding-top: 1rem
+
+    p
+      vertical-align: middle
+      font-size: 24px
+      line-height: 29px
+      font-family: var(--ff-phil)
+      font-weight: var(--fw-400)
+
+.page__title
+  padding: 2rem 0
+  background: #f3f4f9
+
+.privacy__content
+  padding: 2rem 1rem
+
+  h4
+    text-transform: capitalize
+
+  ul
+    padding: 1rem 2rem
+
+  p,li
+    margin: 1rem 0
+    font-size: 1rem
+    line-height: 1.6
+    opacity: .8
+
+  li
+    margin: 1rem
