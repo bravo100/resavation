@@ -498,7 +498,8 @@ section .section__para p {
   font-weight: 400;
   letter-spacing: 0.1rem;
   line-height: 50px;
-  height: 80px;
+  height: 200px;
+  overflow: hidden;
 }
 .footer__logo .logo:hover, .footer__logo .logo:focus {
   color: var(--primary-color);
