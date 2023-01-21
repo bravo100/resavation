@@ -253,8 +253,12 @@ section
     font-weight: 700
     font-size: 1rem
     color: var(--primary-dark)
+    // max-width: 300px
+    height: 80px
+    overflow: hidden
 
     .logo
+      object-fit: cover
 
       +hof
         color: var(--primary-light)
@@ -448,7 +452,6 @@ section
     font-family: var(--ff-phil)
 
     .logo
-      font-size: 45px
       text-transform: capitalize
       vertical-align: middle
       +r-flex
@@ -456,9 +459,7 @@ section
       font-weight: 400
       letter-spacing: .1rem
       line-height: 50px
-
-      img
-        width: 45px
+      height: 80px
 
       +hof
         color: var(--primary-color)
