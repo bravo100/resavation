@@ -425,11 +425,19 @@ section .section__para p {
     text-align: left;
   }
 }
+.guide__card--para {
+  text-align: center;
+}
 .guide__card--para p {
   font-weight: var(--fw-400);
   line-height: calc(var(--lh-main) + 30%);
   font-size: 24px;
   color: rgba(0, 0, 0, 0.8);
+}
+@media (min-width: 768px) {
+  .guide__card--para {
+    text-align: left;
+  }
 }
 
 /* ====== features ====== */
@@ -469,11 +477,19 @@ section .section__para p {
     text-align: left;
   }
 }
+.features__card--para {
+  text-align: center;
+}
 .features__card--para p {
   font-weight: var(--fw-400);
   line-height: calc(var(--lh-main) + 30%);
   font-size: 24px;
   color: rgba(0, 0, 0, 0.8);
+}
+@media (min-width: 768px) {
+  .features__card--para {
+    text-align: left;
+  }
 }
 
 /* ====== footer ====== */

@@ -40,12 +40,16 @@ $primary-light: lighten($primary-color, 10%)
         text-align: left
 
     &--para
+      text-align: center
 
       p
         font-weight: var(--fw-400)
         line-height: calc(var(--lh-main) + 30%)
         font-size: 24px
         color: rgba(0, 0, 0, .8)
+
+      +min($tablet)
+        text-align: left
 
 /* ====== mixins ====== */
 =flex__space
