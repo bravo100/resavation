@@ -33,7 +33,7 @@ $primary-light: lighten($primary-color, 10%)
       h2
         font-weight: var(--fw-500)
         line-height: var(--lh-main)
-        font-size: 28px
+        font-size: 32px
         margin-bottom: 18px
 
       +min($tablet)
@@ -44,7 +44,7 @@ $primary-light: lighten($primary-color, 10%)
       p
         font-weight: var(--fw-400)
         line-height: calc(var(--lh-main) + 30%)
-        font-size: 20px
+        font-size: 24px
         color: rgba(0, 0, 0, .8)
 
 /* ====== mixins ====== */
@@ -423,9 +423,11 @@ section
 
   &__content
     display: grid
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+    grid:
+      template-columns: repeat(auto-fit, minmax(400px, 1fr))
+      row-gap: 14rem
+      column-gap: 4rem
     padding: 1rem
-    gap: 4rem
     width: 100%
 
     +min($tablet)
@@ -453,7 +455,6 @@ section
       max-width: 200px
       +r-flex
       gap: 1rem
-      overflow: hidden
 
       +hof
         color: var(--primary-color)

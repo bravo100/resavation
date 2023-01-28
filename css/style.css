@@ -417,7 +417,7 @@ section .section__para p {
 .guide__card--heading h2 {
   font-weight: var(--fw-500);
   line-height: var(--lh-main);
-  font-size: 28px;
+  font-size: 32px;
   margin-bottom: 18px;
 }
 @media (min-width: 768px) {
@@ -428,7 +428,7 @@ section .section__para p {
 .guide__card--para p {
   font-weight: var(--fw-400);
   line-height: calc(var(--lh-main) + 30%);
-  font-size: 20px;
+  font-size: 24px;
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -436,8 +436,9 @@ section .section__para p {
 .features__content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-row-gap: 14rem;
+  grid-column-gap: 4rem;
   padding: 1rem;
-  gap: 4rem;
   width: 100%;
 }
 @media (min-width: 768px) {
@@ -455,7 +456,7 @@ section .section__para p {
 .features__card--heading h2 {
   font-weight: var(--fw-500);
   line-height: var(--lh-main);
-  font-size: 28px;
+  font-size: 32px;
   margin-bottom: 18px;
 }
 @media (min-width: 768px) {
@@ -466,7 +467,7 @@ section .section__para p {
 .features__card--para p {
   font-weight: var(--fw-400);
   line-height: calc(var(--lh-main) + 30%);
-  font-size: 20px;
+  font-size: 24px;
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -493,7 +494,6 @@ section .section__para p {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  overflow: hidden;
 }
 .footer__logo .logo:hover, .footer__logo .logo:focus {
   color: var(--primary-color);
