@@ -221,18 +221,14 @@ section .section__para p {
   }
 }
 .navbar__logo {
-  font-family: var(--ff-bold);
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--primary-dark);
-  height: 80px;
-  overflow: hidden;
+  padding-top: 1rem;
 }
 .navbar__logo .logo {
   object-fit: cover;
+  transition: 0.3s ease-in;
 }
 .navbar__logo .logo:hover, .navbar__logo .logo:focus {
-  color: var(--primary-light);
+  transform: rotateY(180deg);
 }
 .navbar__menu ul, .navbar__links {
   display: flex;
@@ -240,10 +236,11 @@ section .section__para p {
   align-items: center;
 }
 .navbar__menu ul {
-  font-size: 20px;
+  font-size: 26px;
   font-weight: var(--fw-400);
   font-family: var(--ff-phil);
   gap: 1rem;
+  margin-right: 6rem;
 }
 
 /* ====== banner ====== */
@@ -260,7 +257,7 @@ section .section__para p {
 @media (min-width: 768px) {
   .banner .container {
     margin-top: 0;
-    padding: 2rem 4rem;
+    padding: 2rem 0;
   }
 }
 .banner__content {
@@ -270,17 +267,17 @@ section .section__para p {
   flex-direction: column;
 }
 .banner__heading h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-weight: var(--fw-600);
   font-family: var(--ff-play);
   color: var(--primary-color);
   line-height: var(--lh-main);
-  font-size: 30px;
+  font-size: 50px;
 }
 @media (min-width: 768px) {
   .banner__heading h1 {
     font-size: 50px;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
 .banner__para p {
@@ -288,7 +285,7 @@ section .section__para p {
   font-family: var(--ff-inter);
   color: rgba(0, 0, 0, 0.7);
   line-height: var(--lh-main);
-  font-size: 12px;
+  font-size: 22px;
   margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
@@ -491,14 +488,11 @@ section .section__para p {
 .footer__logo .logo {
   text-transform: capitalize;
   vertical-align: middle;
+  max-width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.1rem;
-  line-height: 50px;
-  height: 200px;
   overflow: hidden;
 }
 .footer__logo .logo:hover, .footer__logo .logo:focus {

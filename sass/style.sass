@@ -249,29 +249,25 @@ section
       flex-direction: row
 
   &__logo
-    font-family: var(--ff-bold)
-    font-weight: 700
-    font-size: 1rem
-    color: var(--primary-dark)
-    // max-width: 300px
-    height: 80px
-    overflow: hidden
+    padding-top: 1rem
 
     .logo
       object-fit: cover
+      transition: .3s ease-in
 
       +hof
-        color: var(--primary-light)
+        transform: rotateY(180deg)
 
   &__menu ul,
   &__links
     +r-flex
 
   &__menu ul
-    font-size: 20px
+    font-size: 26px
     font-weight: var(--fw-400)
     font-family: var(--ff-phil)
     gap: 1rem
+    margin-right: 6rem
 
 /* ====== banner ====== */
 .banner
@@ -286,7 +282,7 @@ section
 
     +min($tablet)
       margin-top: 0
-      padding: 2rem 4rem
+      padding: 2rem 0
 
   &__content
     +r-flex($j: center, $a: flex-start)
@@ -295,16 +291,16 @@ section
   &__heading
 
     h1
-      margin-bottom: 2rem
+      margin-bottom: 1rem
       font-weight: var(--fw-600)
       font-family: var(--ff-play)
       color: var(--primary-color)
       line-height: var(--lh-main)
-      font-size: 30px
+      font-size: 50px
 
       +min($tablet)
         font-size: 50px
-        margin-bottom: 1rem
+        margin-bottom: 2rem
 
   &__para
 
@@ -313,7 +309,7 @@ section
       font-family: var(--ff-inter)
       color: rgba(0, 0, 0, .7)
       line-height: var(--lh-main)
-      font-size: 12px
+      font-size: 22px
       margin-bottom: 1rem
 
       +min($tablet)
@@ -454,12 +450,9 @@ section
     .logo
       text-transform: capitalize
       vertical-align: middle
+      max-width: 200px
       +r-flex
       gap: 1rem
-      font-weight: 400
-      letter-spacing: .1rem
-      line-height: 50px
-      height: 200px
       overflow: hidden
 
       +hof
