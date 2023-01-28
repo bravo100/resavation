@@ -497,6 +497,7 @@ section .section__para p {
   background: #111c24;
   color: #fff;
   padding: 5rem 0;
+  width: 100%;
 }
 .footer .container {
   display: flex;
