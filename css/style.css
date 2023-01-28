@@ -441,6 +441,11 @@ section .section__para p {
   padding: 1rem;
   width: 100%;
 }
+@media (max-width: 768px) {
+  .features__content {
+    grid-row-gap: 4rem;
+  }
+}
 @media (min-width: 768px) {
   .features__content {
     padding: 1rem 3rem;
